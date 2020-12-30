@@ -52,7 +52,8 @@ var handleNoteSave = function()
 };
 
 // Delete the clicked note
-var handleNoteDelete = function(event) {
+var handleNoteDelete = function(event) 
+{
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
 
@@ -60,7 +61,8 @@ var handleNoteDelete = function(event) {
     .parent(".list-group-item")
     .data();
 
-  if (activeNote.id === note.id) {
+  if (activeNote.id === note.id) 
+  {
     activeNote = {};
   }
 
@@ -96,8 +98,10 @@ var handleRenderSaveBtn = function() {
 var renderNoteList = function(notes) {
   $noteList.empty();
 
+  // Array variable
   var noteListItems = [];
 
+  // For loop
   for (var i = 0; i < notes.length; i++) {
     var note = notes[i];
 
@@ -121,6 +125,7 @@ var getAndRenderNotes = function() {
   });
 };
 
+// Setting up non-click event
 $saveNoteBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
