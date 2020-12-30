@@ -1,3 +1,5 @@
+// Almonzo was here, server file
+
 // Dependencies
 var express = require("express");
 var path = require("path");
@@ -7,7 +9,7 @@ var util = require('util');
 // Creating Express server
 var app = express();
 
-// Port
+// Port 3000 setup
 var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
