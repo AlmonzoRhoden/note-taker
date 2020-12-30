@@ -1,14 +1,17 @@
+// Declaring variables
+
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
 var $newNoteBtn = $(".new-note");
 var $noteList = $(".list-container .list-group");
 
-// activeNote is used to keep track of the note in the textarea
+// activeNote variable is used to keep track of the note in the textarea
 var activeNote = {};
 
 // A function for getting all notes from the db
-var getNotes = function() {
+var getNotes = function() 
+{
   return $.ajax({
     url: "/api/notes",
     method: "GET"
@@ -16,7 +19,8 @@ var getNotes = function() {
 };
 
 // A function for saving a note to the db
-var saveNote = function(note) {
+var saveNote = function(note) 
+{
   return $.ajax({
     url: "/api/notes",
     data: note,
@@ -25,32 +29,17 @@ var saveNote = function(note) {
 };
 
 // A function for deleting a note from the db
-var deleteNote = function(id) {
-  return $.ajax({
-    url: "api/notes/" + id,
-    method: "DELETE"
-  });
-};
-
-// If there is an activeNote, display it, otherwise render empty inputs
-var renderActiveNote = function() {
-  $saveNoteBtn.hide();
-
-  if (activeNote.id) {
-    $noteTitle.attr("readonly", true);
-    $noteText.attr("readonly", true);
-    $noteTitle.val(activeNote.title);
-    $noteText.val(activeNote.text);
-  } else {
-    $noteTitle.attr("readonly", false);
-    $noteText.attr("readonly", false);
+var deleteNote = function(id) 
+{
+  { $noteText.attr("readonly", false);
     $noteTitle.val("");
     $noteText.val("");
   }
 };
 
 // Get the note data from the inputs, save it to the db and update the view
-var handleNoteSave = function() {
+var handleNoteSave = function() 
+{
   var newNote = {
     title: $noteTitle.val(),
     text: $noteText.val()
