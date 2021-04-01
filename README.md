@@ -1,6 +1,6 @@
 <h1 align = "center" >Note-Taker </h1>
 
-<h2>Preview of application<h2>
+<h2>Preview of Application<h2>
 
 ![note-taker](https://user-images.githubusercontent.com/61447353/100692262-72bc1700-3358-11eb-93e8-8337cafefdb4.PNG)
 
